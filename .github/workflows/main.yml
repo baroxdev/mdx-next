@@ -33,12 +33,12 @@ jobs:
         run: npx next build
 
       - name: Log
-        run: ls
+        run: ls -a
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.next/standalone
+          path: .next/standalone
 
   deploy:
     environment:
