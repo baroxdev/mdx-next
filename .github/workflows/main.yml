@@ -33,7 +33,7 @@ jobs:
         run: npx next build
 
       - name: Log
-        run: ls -a
+        run: cd .next && ls -a
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
