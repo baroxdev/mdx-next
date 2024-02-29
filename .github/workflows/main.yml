@@ -2,7 +2,7 @@ name: publish-to-github-pages
 on:
   push:
     branches:
-      - next-mdx-remote
+      - mainmain
 
 permissions:
   contents: read
