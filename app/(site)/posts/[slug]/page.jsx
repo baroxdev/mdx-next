@@ -10,20 +10,6 @@ export async function generateMetadata({ params }) {
   return { title: meta.title }
 }
 
-export async function generateStaticParams() {
-  const files = fs.readdirSync(rootDirectory)
-
-  let paths = [
-    {
-      params: {
-        slug: ''
-      }
-    }
-  ]
-
-  return paths
-}
-
 const Page = async ({ params }) => {
   const { content } = await getPageContent(params.slug)
 

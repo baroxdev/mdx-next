@@ -12,7 +12,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
-  basePath: '/mdx-next',
+  // basePath: '/mdx-next',
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   /**
    * Disable server-based image optimization. Next.js does not support
