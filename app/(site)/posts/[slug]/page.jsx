@@ -1,4 +1,4 @@
-import { getPostBySlug } from '@/lib/mdx'
+import { getAllPostsMeta, getPostBySlug } from '@/lib/mdx'
 
 const getPageContent = async slug => {
   const { meta, content } = await getPostBySlug(slug)
@@ -8,6 +8,11 @@ const getPageContent = async slug => {
 export async function generateMetadata({ params }) {
   const { meta } = await getPageContent(params.slug)
   return { title: meta.title }
+}
+
+export async function generateStaticParams() {
+  const postsMeta = getAllPostsMeta()
+  return postsMeta.map(meta => ({ params: { slug: meta.slug } }))
 }
 
 const Page = async ({ params }) => {
