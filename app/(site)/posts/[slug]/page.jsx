@@ -15,7 +15,7 @@ const Page = async ({ params }) => {
 
   return (
     <section className='py-24'>
-      <div className='container py-4 prose'>{content}</div>
+      <div className='container prose py-4'>{content}</div>
     </section>
   )
 }
