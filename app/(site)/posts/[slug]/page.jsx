@@ -13,12 +13,13 @@ export async function generateMetadata({ params }) {
 export async function generateStaticParams() {
   const files = fs.readdirSync(rootDirectory)
 
-  let paths = []
-
-  for (const file of files) {
-    const slug = file.replace(/\.mdx$/, '')
-    paths.push({ params: { slug } })
-  }
+  let paths = [
+    {
+      params: {
+        slug: ''
+      }
+    }
+  ]
 
   return paths
 }
