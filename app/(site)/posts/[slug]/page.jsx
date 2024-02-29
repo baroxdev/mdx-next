@@ -11,8 +11,16 @@ export async function generateMetadata({ params }) {
 }
 
 export async function generateStaticParams() {
-  const postsMeta = getAllPostsMeta()
-  return postsMeta.map(meta => ({ params: { slug: meta.slug } }))
+  const files = fs.readdirSync(rootDirectory)
+
+  let paths = []
+
+  for (const file of files) {
+    const slug = file.replace(/\.mdx$/, '')
+    paths.push({ params: { slug } })
+  }
+
+  return paths
 }
 
 const Page = async ({ params }) => {
